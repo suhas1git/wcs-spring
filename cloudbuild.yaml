@@ -7,11 +7,6 @@ steps:
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true"]
   - name: gcr.io/cloud-builders/docker
-    args: ['echo', 'hello ${_SUB_VALUE}']
-  substitutions:
-    _SUB_VALUE: world
-  options:
-    substitution_option: 'ALLOW_LOOSE'
     args: ["build", "-t", "gcr.io/protean-set-341414/wcs-spring", "--build-arg=JAR_FILE=target/wcs-1.0.0.jar", "."]
-images: ["gcr.io/protean-set-341414/wcs-spring"]
+images: ["gcr.io/protean-set-341414/wcs-spring"]  #Pushes build image to registry
 # [END cloudbuild_maven]
