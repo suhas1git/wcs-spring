@@ -1,9 +1,11 @@
 node("master") {
         // This is a demo
     try {
+            def buildNumberId = getBuildNumber()
             stage("Checking out SCM") {
         // try{
-            checkout scn
+            checkout scm
+             echo '*** $buildNumberId ***'
         // }
         
     }
