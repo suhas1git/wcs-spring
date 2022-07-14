@@ -6,7 +6,7 @@ node("master") {
             stage("Checking out SCM") {
         // try{
             checkout scm
-             echo '*** $buildNumberId ***'
+             echo "*** ${buildNumberId} ***"
         // }
         
     }
@@ -15,7 +15,18 @@ node("master") {
              echo 'Exception occurred dureing Checkout: ' + e.toString()
              sh 'Handle the exception!'
         }
-        
+    try{
+            if(isDeployableBranch){
+        stage("Test Condition"){
+
+        }
+    }
+      
+    }
+    catch(Exception e) {
+         echo 'Exception occurred dureing Checkout: ' + e.toString()
+    }
+  
 
 
 }
@@ -37,4 +48,8 @@ if(buildCounter) {
         print("Build number = [${buildNumberWithShortCommitId}]")
         return buildNumberWithShortCommitId
     }
+}
+
+def isDeployableBranch(){
+    return (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'master')
 }
