@@ -18,7 +18,7 @@ node("master") {
     try{
             if(isDeployableBranch()){
         stage("Test Condition"){
-                sh '******************************'
+                echo "******************************"
         }
     }
       
