@@ -8,7 +8,7 @@ node("Built-In Node") {
         
     }
     }
-   catch (Execption e) {
+   catch (Exception e) {
              echo 'Exception occurred dureing Checkout: ' + e.toString()
              sh 'Handle the exception!'
         }  
