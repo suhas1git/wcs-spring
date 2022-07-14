@@ -1,4 +1,4 @@
-node("master") {
+node("Built-In Node") {
         // This is a demo
     stage("Checking out SCM") {
         // try{
