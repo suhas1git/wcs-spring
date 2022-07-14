@@ -16,7 +16,11 @@ node("master") {
              sh 'Handle the exception!'
         }
         
- def getBuildNumber(buildCounter=1) {
+
+
+}
+
+def getBuildNumber(buildCounter=1) {
 def commitId = sh(script: "git rev-parse HEAD", returnStdout: true).trim()
 def shortCommitId = sh script: "git rev-parse --short ${commitId}", returnStdout: true
 shortCommitId = shortCommitId.trim()
@@ -33,6 +37,4 @@ if(buildCounter) {
         print("Build number = [${buildNumberWithShortCommitId}]")
         return buildNumberWithShortCommitId
     }
-}
-
 }
