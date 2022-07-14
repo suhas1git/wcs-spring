@@ -7,12 +7,14 @@ node("master") {
         // try{
             checkout scm
              echo "*** ${buildNumberId} ***"
+             to fail       
+               
         // }
         
     }
     }
    catch (Exception e) {
-             echo 'Exception occurred dureing Checkout: ' + e.toString()
+           error( 'Exception occurred dureing Checkout: ' + e.toString() )
              sh 'Handle the exception!'
         }
 
