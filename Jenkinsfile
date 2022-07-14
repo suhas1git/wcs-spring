@@ -16,9 +16,9 @@ node("master") {
              sh 'Handle the exception!'
         }
     try{
-            if(isDeployableBranch){
+            if(isDeployableBranch()){
         stage("Test Condition"){
-
+                sh '******************************'
         }
     }
       
