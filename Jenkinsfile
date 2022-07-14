@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@suhas1git 
-suhas1git
-/
-wcs-spring
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-wcs-spring/Jenkinsfile
-@suhas1git
-suhas1git Update Jenkinsfile
-Latest commit 6cf0971 1 hour ago
- History
- 1 contributor
-59 lines (50 sloc)  1.88 KB
-
 node("master") {
         // This is a demo
     def buildNumberId = getBuildNumber()
@@ -36,7 +7,7 @@ node("master") {
         // try{
             checkout scm
              echo "*** ${buildNumberId} ***"
-             to fail       
+             //to fail       
                
         // }
         
