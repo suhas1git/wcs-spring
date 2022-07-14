@@ -27,7 +27,8 @@ node("master") {
       
     }
     catch(Exception e) {
-         echo 'Exception occurred dureing Deploy: ' + e.toString()
+         //echo 'Exception occurred dureing Deploy: ' + e.toString()
+          error("Build failed because of :: " + e.toString())
     }
   
 }
