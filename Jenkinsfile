@@ -4,9 +4,10 @@ node("master") {
         try{
             checkout scm
         }
-        catch (Execption e) {
+ 
+    }
+                catch (Execption e) {
              echo 'Exception occurred dureing Checkout: ' + e.toString()
              sh 'Handle the exception!'
-        }  
-    }
+        } 
 }
