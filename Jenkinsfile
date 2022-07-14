@@ -7,7 +7,7 @@ node("master") {
         // try{
             checkout scm
              echo "*** ${buildNumberId} ***"
-             //to fail       
+             to fail       
                
         // }
         
