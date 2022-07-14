@@ -3,7 +3,7 @@ node("master") {
     try {
             stage("Checking out SCM") {
         // try{
-            checkout scm
+            checkout scn
         // }
         
     }
