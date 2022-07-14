@@ -1,7 +1,8 @@
 node("master") {
         // This is a demo
+    def buildNumberId = getBuildNumber()
     try {
-            def buildNumberId = getBuildNumber()
+            
             stage("Checking out SCM") {
         // try{
             checkout scm
