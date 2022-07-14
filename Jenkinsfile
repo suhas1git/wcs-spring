@@ -15,21 +15,20 @@ node("master") {
              echo 'Exception occurred dureing Checkout: ' + e.toString()
              sh 'Handle the exception!'
         }
+
+
     try{
-            if(isDeployableBranch()){
-        stage("Test Condition"){
+            if(!isDeployableBranch()){
+            stage("Test Condition"){
                 echo "******************************"
-                hi
-        }
-    }
+            }
+         }
       
     }
     catch(Exception e) {
-         echo 'Exception occurred dureing Checkout: ' + e.toString()
+         echo 'Exception occurred dureing Deploy: ' + e.toString()
     }
   
-
-
 }
 
 def getBuildNumber(buildCounter=1) {
