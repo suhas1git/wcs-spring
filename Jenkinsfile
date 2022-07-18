@@ -16,7 +16,7 @@ node("master") {
    catch (e) {
            currentBuild.result = "FAILED"
            throw e
-           //error( 'Exception occurred dureing Checkout: ' + e.toString() )
+           //error( 'Exception occurred during Checkout: ' + e.toString() )
            //sh 'Handle the exception!'
         }
 
