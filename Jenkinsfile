@@ -1,5 +1,5 @@
 pipeline {
-    agebt any
+    agent any
     stages{
         stage("Checkout"){
             steps{
