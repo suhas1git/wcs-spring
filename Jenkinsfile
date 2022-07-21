@@ -1,40 +1,20 @@
-node("master") {
-        // This is a demo
-    def buildNumberId = getBuildNumber()
-    try {
-            
-            stage("Checking out SCM") {
-        // try{
-            checkout scm
-             echo "*** ${buildNumberId} ***"
-             to fail       
-               
-        // }
-        
-    }
-    }
-   catch (e) {
-           currentBuild.result = "FAILED"
-           throw e
-           //error( 'Exception occurred dureing Checkout: ' + e.toString() )
-           //sh 'Handle the exception!'
-        }
+pipeline {
 
-
-    try{
-            if(!isDeployableBranch()){
-            stage("Test Condition"){
-                echo "******************************"
-                    hi
+    stages{
+        stage("Checkout"){
+            steps{
+                checkout scm
             }
-         }
-      
+            githubPRAddLabels labelProperty: labels('Checkout')
+        }
+        stage("Test")
+        {
+            steps{
+                echo "Test"
+            }
+        }
     }
-    catch(Exception e) {
-         //echo 'Exception occurred dureing Deploy: ' + e.toString()
-          error("Build failed because of :: " + e.toString())
-    }
-  
+
 }
 
 def getBuildNumber(buildCounter=1) {
