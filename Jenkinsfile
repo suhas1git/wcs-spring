@@ -4,8 +4,9 @@ pipeline {
         stage("Checkout"){
             steps{
                 checkout scm
+                githubPRAddLabels labelProperty: labels('Checkout')
             }
-            githubPRAddLabels labelProperty: labels('Checkout')
+            
         }
         stage("Test")
         {
